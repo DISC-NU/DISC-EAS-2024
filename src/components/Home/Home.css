@@ -1,0 +1,18 @@
+/* adding style to the heading class */
+.heading {
+    color: blue;
+    text-align: center;
+}
+/* adding style to the paragraph class */
+.paragraph {
+    color: red;
+}
+
+.banner-container {
+    background-color: rgb(202, 184, 219);
+}
+
+.text-center {
+    color: black;
+    background-color: rgb(202, 184, 219);
+}
