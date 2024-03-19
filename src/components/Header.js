@@ -1,18 +1,19 @@
 import React from 'react';
+import logo from './assets/img/eas-logo-white.png';
+import { Link } from 'react-router-dom';
+import '../styles/Header.css';
 
 const Header = () => {
     return (
-        <div className="navbar bg-[#FA7D19] text-white  px-16">
-            <div className="flex-1">
-                <a href='#' className="btn btn-ghost normal-case text-3xl">Evanston Animal Shelter</a>
+        <div className="header">
+            <div className='leftside'>
+                <Link to="/">Evanston Animal Shelter</Link>
+                <Link to="/" style={{fontWeight: 401, fontSize: 24}}>Inventory Manager</Link>
             </div>
-            <div className="flex-none">
-                <ul className="menu menu-horizontal p-0 font-bold">
-                    <li><a>Home</a></li>
-                    <li><a>About</a></li>
-                    <li><a>Blogs</a></li>
-                    <li><a>Contact Us</a></li>
-                </ul>
+            <div className='rightside'>
+                <a href="http://evanstonanimalshelter.net/">
+                    <img src={logo}></img>
+                </a>
             </div>
         </div>
     );
