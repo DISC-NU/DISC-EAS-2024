@@ -1,0 +1,64 @@
+.additem {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+}
+
+.additem h1 {
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 36px;
+    color: #4C4A75;
+    text-shadow: 0 2.5px 2px gray;
+}
+
+.additem .addbutton {
+    margin: 10px;
+    width: 140px;
+    height: 60px;
+    border-radius: 18px;
+    color: white;
+    background-color: #706e8e;
+    border: 3px solid #4C4A75;
+    font-family: 'Karla';
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+    font-size: 28px;
+    box-shadow: 0 3px 4px gray;
+}
+
+.additem .addbutton:hover {
+    background-color: #4C4A75;
+    cursor: pointer;
+}
+
+.additem .addbutton:disabled {
+    background-color: #d4d4dd;
+    border: 3px solid #b3b2c2;
+}
+
+.additem .addanotheritembutton {
+    margin: 10px;
+    width: 320px;
+    height: 60px;
+    border-radius: 18px;
+    color: white;
+    background-color: #9492aa;
+    border: 3px solid #706e8e;
+    font-family: 'Karla';
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+    font-size: 28px;
+    box-shadow: 0 3px 4px gray;
+}
+
+.additem .addanotheritembutton:hover {
+    background-color: #706e8e;
+    cursor: pointer;
+}

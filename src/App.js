@@ -1,6 +1,8 @@
 import './App.css';
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import AddItem from './pages/AddItem';
+import Checkout from './pages/Checkout';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -10,6 +12,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" exact element={<Home />}/>
+          <Route path='/additem' exact element={<AddItem />}/>
+          <Route path='/checkout' exact element={<Checkout />}/>
         </Routes>
       </Router>
       

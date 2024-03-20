@@ -12,7 +12,7 @@ const Header = () => {
             </div>
             <div className='rightside'>
                 <a href="http://evanstonanimalshelter.net/">
-                    <img src={logo}></img>
+                    <img src={logo} alt='logo'></img>
                 </a>
             </div>
         </div>

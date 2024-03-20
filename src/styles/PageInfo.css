@@ -1,0 +1,19 @@
+.pageinfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+
+.pageinfo .leftside {
+    padding-right: 80px;
+    align-self: self-start;
+    width: 250px;
+}
+
+.pageinfo .leftside .underserial {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

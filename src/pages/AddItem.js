@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react';
+import PageInfo from '../components/PageInfo';
+import Footer from '../components/Footer';
+import '../styles/AddItem.css';
 
 function AddItem() {
+
+  const handleClick = () => {
+    window.location.reload();
+  };
+
+  const [buttonText, setButtonText] = useState('ADD');
+  const [btnDisable, setBtnDisable] = useState(false);
+  function handleBtnClick() {
+    setButtonText('ADDED');
+    setBtnDisable(true);
+  }
+
   return (
-    <div>
-      
+    <div className='additem'>
+      <h1 className='additemtitle'>ADD ITEM</h1>
+      <PageInfo className='pageinfo'/>
+      <div>
+        <button className='addbutton' onClick={handleBtnClick} disabled={btnDisable}>{buttonText}</button>
+      </div>
+      <div>
+        <button type="button" onClick={handleClick} className='addanotheritembutton'>ADD ANOTHER ITEM</button>
+      </div>
+      <Footer />
     </div>
   )
 }

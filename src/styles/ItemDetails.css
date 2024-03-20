@@ -1,0 +1,34 @@
+.itemdetails {
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 180px;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.itemdetails p{
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.itemdetails .animal,.product,.food,.catfood {
+    width: 100%;
+}
+
+.itemdetails .animal .cat {
+    width: 100px;
+}
+.itemdetails .product .food {
+    width: 100px;
+}
+.itemdetails .foodtype .wet {
+    width: 100px;
+}
+.itemdetails .catfood .pate {
+    width: 100px;
+}
