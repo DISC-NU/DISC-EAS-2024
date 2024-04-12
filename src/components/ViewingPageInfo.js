@@ -1,12 +1,30 @@
 import React, { useState } from 'react';
 import ItemDetails from './ItemDetails';
 import { TextField } from '@mui/material';
-import '..styles/PageInfo.css';
+import '../styles/PageInfo.css';
 function ViewingPageInfo() {
-    return (
+    const [receivedLitter, setReceivedLitter] = useState(false);
 
+    const handleLitterReceived = (value) => {
+        setReceivedLitter(false); // since we won't be showing this value regardless
+    }
+
+    const [receivedCD, setReceivedCD] = useState(false);
+
+    const handleCatDryReceived = (value) => {
+        setReceivedCD(false);
+    };
+
+    const [receivedDD, setReceivedDD] = useState(false);
+
+    const handleDogDryReceived = (value) => {
+        setReceivedDD(false);
+    }
+
+    return (
         <div className= 'pageinfo'>
-            <ItemDetails />
+            <div>
+            <ItemDetails receiveLitter={handleLitterReceived} receiveDogFoodDry={handleCatDryReceived} receiveCatFoodDry={handleDogDryReceived}/>
             <div className='leftside'>
                 <div className='serial'>
                     <TextField
@@ -20,6 +38,7 @@ function ViewingPageInfo() {
                       }}
                     />
                 </div>
+            </div>
             </div>
         </div>
     )

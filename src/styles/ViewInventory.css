@@ -2,7 +2,7 @@
     width: 100%;
     height: 100%;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     display: flex;
     flex-direction: column;
     padding-top: 40px;
@@ -18,8 +18,8 @@
 
 .viewinventory .clearbutton {
     margin: 10px;
-    width: 60px;
-    height: 80px;
+    width: 100px;
+    height: 50px;
     border-radius: 18px;
     color: white;
     background-color: #75A4A6;
@@ -28,7 +28,7 @@
     font-weight: 400;
     text-align: center;
     display: inline-block;
-    font-size: 23px;
+    font-size: 18px;
     box-shadow: 0 3px 4px gray;
 }
 
@@ -66,4 +66,39 @@
 .viewinventory .searchbutton:disabled {
     background-color: #d4d4dd;
     border: 3px solid #b3b2c2;
+}
+
+.viewinventory .item-details-container {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    display: flex;
+}
+
+.viewinventory .clear-button-placement {
+    position: absolute;
+    bottom: 58%;
+    left: 33%;
+    transform: translateX(-50%);
+}
+
+.viewinventory .item-table-placement {
+    position: absolute;
+    bottom: 60%;
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+.viewinventory .page-info {
+    position: absolute;
+    bottom: 25%;
+    left: 23%;
+    transform: translateX(-50%);
+}
+
+.viewinventory .search-button-placement {
+    position: absolute;
+    bottom: 6%;
+    left: 19%;
+    transform: translateX(-50%);
 }

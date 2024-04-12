@@ -1,0 +1,13 @@
+.itemtable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.placement {
+    padding-bottom: 20px;
+    bottom: 80%;
+    left: 100%;
+    transform: translateX(-50%);
+}

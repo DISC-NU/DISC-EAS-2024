@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ViewingPageInfo from '../components/ViewingPageInfo';
 import Footer from '../components/Footer';
+import ItemTable from '../components/ItemTable';
 import '../styles/ViewInventory.css';
 
 function ViewInventory() {
@@ -17,13 +18,20 @@ function ViewInventory() {
   return (
     <div className='viewinventory'>
       <h1 className='viewinventorytitle'>VIEW INVENTORY</h1>
-      <ViewingPageInfo className='pageinfo'/>
-        <div>
-          <button className='clearbutton' onClick={handleBtnClick}>CLEAR</button>
+      <div>
+        <div className='page-info'>
+        <ViewingPageInfo/>
         </div>
-        <div>
-          <button className='searchbutton' onClick={handleBtnClick}>SEARCH</button>
+        <div className='clear-button-placement'>
+          <button className='clearbutton' onClick={handleClick}>CLEAR</button>
         </div>
+        <div className='item-table-placement'>
+          <ItemTable/>
+        </div>
+      </div>
+      <div className='search-button-placement'>
+        <button className='searchbutton' onClick={handleBtnClick}>SEARCH</button>
+      </div>
       <Footer />
     </div>
   )
