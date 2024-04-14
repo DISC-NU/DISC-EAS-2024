@@ -4,15 +4,13 @@ import React, { useState } from 'react';
 import PageInfo from '../components/PageInfo';
 import Footer from '../components/Footer';
 import '../styles/Checkout.css';
+import HelpModal from '../components/HelpButton';
 
-function Checkout() {
-    // const [catdogData, setcatdogData] = useState({
+function Checkout()  {   // const [catdogData, setcatdogData] = useState({
     //     serialNo: '',
     //     quantity: '',
-    //     pet: '',
-    //     // find a way to automatically retrieve date/time
-    // });
-    // const handleChange = (e) => {
+    //     pet: ''
+        // const handleChange = (e) => {
     //     const { name, value } = e.target;
     //     setcatdogData({
     //         ...catdogData,
@@ -39,6 +37,9 @@ function Checkout() {
             </div>
             <div>
                 <button type="button" onClick={handleClick} className='checkoutanotheritembutton'>CHECK OUT ANOTHER ITEM</button>
+            </div>
+            <div className='help-button-placement'>
+                <HelpModal />
             </div>
             <Footer />
         </div>

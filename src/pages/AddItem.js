@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PageInfo from '../components/PageInfo';
 import Footer from '../components/Footer';
 import '../styles/AddItem.css';
+import HelpModal from '../components/HelpButton';
 
 function AddItem() {
 
@@ -25,6 +26,9 @@ function AddItem() {
       </div>
       <div>
         <button type="button" onClick={handleClick} className='addanotheritembutton'>ADD ANOTHER ITEM</button>
+      </div>
+      <div className='help-button-placement'>
+        <HelpModal />
       </div>
       <Footer />
     </div>

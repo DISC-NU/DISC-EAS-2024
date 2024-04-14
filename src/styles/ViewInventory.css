@@ -102,3 +102,10 @@
     left: 19%;
     transform: translateX(-50%);
 }
+
+.viewinventory .help-button-placement {
+    position: absolute;
+    bottom: 15%;
+    left: 20%;
+    transform: translateX(-50%);
+}

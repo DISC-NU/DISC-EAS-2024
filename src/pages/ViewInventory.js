@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ViewingPageInfo from '../components/ViewingPageInfo';
 import Footer from '../components/Footer';
 import ItemTable from '../components/ItemTable';
+import HelpModal from '../components/HelpButton';
 import '../styles/ViewInventory.css';
 
 function ViewInventory() {
@@ -31,6 +32,9 @@ function ViewInventory() {
       </div>
       <div className='search-button-placement'>
         <button className='searchbutton' onClick={handleBtnClick}>SEARCH</button>
+      </div>
+      <div className='help-button-placement'>
+        <HelpModal />
       </div>
       <Footer />
     </div>

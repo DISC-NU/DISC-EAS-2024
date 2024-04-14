@@ -62,3 +62,11 @@
     background-color: #7e6587;
     cursor: pointer;
 }
+
+.checkout .help-button-placement {
+    background-color: #aa9ab0;
+    position: absolute;
+    bottom: 15%;
+    left: 20%;
+    transform: translateX(-50%);
+}

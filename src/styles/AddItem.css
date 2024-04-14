@@ -62,3 +62,11 @@
     background-color: #706e8e;
     cursor: pointer;
 }
+
+.additem .help-button-placement {
+    background-color: #9492aa;
+    position: absolute;
+    bottom: 15%;
+    left: 20%;
+    transform: translateX(-50%);
+}
