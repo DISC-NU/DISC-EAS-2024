@@ -34,7 +34,7 @@ function ViewInventory() {
         <button className='searchbutton' onClick={handleBtnClick}>SEARCH</button>
       </div>
       <div className='help-button-placement'>
-        <HelpModal />
+        <HelpModal className='help-button'/>
       </div>
       <Footer />
     </div>

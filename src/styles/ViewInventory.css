@@ -105,7 +105,36 @@
 
 .viewinventory .help-button-placement {
     position: absolute;
-    bottom: 15%;
-    left: 20%;
+    bottom: 75%;
+    left: 10%;
     transform: translateX(-50%);
+    margin: 10px;
+    width: 70px;
+    height: 40px;
+    border-radius: 18px;
+    color: white;
+    background-color: #75A4A6;
+    border: 3px solid #548D90;
+    font-family: 'Karla';
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    box-shadow: 0 3px 4px gray
+}
+
+.viewinventory .help-button {
+    margin: 10px;
+    width: 240px;
+    height: 120px;
+    border-radius: 18px;
+    color: white;
+    background-color: #75A4A6;
+    border: 3px solid #548D90;
+    font-family: 'Karla';
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    box-shadow: 0 3px 4px gray
 }

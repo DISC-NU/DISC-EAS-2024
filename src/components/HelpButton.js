@@ -14,16 +14,18 @@ function HelpModal() {
             <div>
                 <Button onClick={handleOpen}>?</Button>
                 <Modal
+                className='modal'
                 open={open}
                 onClose={handleClose}
                 aria-labeledby='modal-modal-title'
                 aria-describedby='modal-modal-description'
+
                 >
                     <Box>
-                        <Typography id='modal-modal-title' variant='h6' compoenent='h2'>
+                        <Typography id='modal-modal-title' variant='h6' component='h2'>
                             Help Page 
                         </Typography>
-                        <Typography id='modal-modal-descrioption' sx={{ mt : 2}}>
+                        <Typography id='modal-modal-description' sx={{ mt : 2}}>
                             This is where I describe what each different page does.
                         </Typography>
                     </Box>
