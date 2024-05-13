@@ -65,8 +65,14 @@
 
 .additem .help-button-placement {
     background-color: #9492aa;
+    border: 3px solid #4C4A75;
+    border-radius: 18px;
+    color: white;
+    font-weight: 400;
+    font-family: 'Karla';
     position: absolute;
     bottom: 15%;
     left: 20%;
     transform: translateX(-50%);
+    box-shadow: 0 3px 4px gray;
 }

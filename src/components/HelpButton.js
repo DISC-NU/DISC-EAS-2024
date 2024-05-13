@@ -21,8 +21,8 @@ function HelpModal() {
                 aria-describedby='modal-modal-description'
 
                 >
-                    <Box>
-                        <Typography id='modal-modal-title' variant='h6' component='h2'>
+                    <Box className='paper'>
+                        <Typography id='modal-modal-title' variant='h6' component='h2' >
                             Help Page 
                         </Typography>
                         <Typography id='modal-modal-description' sx={{ mt : 2}}>
