@@ -3,25 +3,27 @@ import ItemDetails from './ItemDetails';
 import { TextField } from '@mui/material';
 import '../styles/PageInfo.css';
 
-function PageInfo() {
+function PageInfo({rcfd, rdfd, rcl, cat, dog, cf, df, cl, dp, cdf, ddf, cwf, dwf, cp, cnp}) {
+  // const [serialNumber, setSerialNumber] = useState('');
+  // const [quantity, setQuantity] = useState('');
+  // const [pounds, setPounds] = useState('');
+  // const [receivedLitter, setReceivedLitter] = useState(false);
 
-  const [receivedLitter, setReceivedLitter] = useState(false);
+  // const handleLitterReceived = (value) => {
+  //   setReceivedLitter(value);
+  // };
 
-  const handleLitterReceived = (value) => {
-    setReceivedLitter(value);
-  };
+  // const [receivedCD, setReceivedCD] = useState(false);
 
-  const [receivedCD, setReceivedCD] = useState(false);
+  // const handleCatDryReceived = (value) => {
+  //   setReceivedCD(value);
+  // };
 
-  const handleCatDryReceived = (value) => {
-    setReceivedCD(value);
-  };
+  // const [receivedDD, setReceivedDD] = useState(false);
 
-  const [receivedDD, setReceivedDD] = useState(false);
-
-  const handleDogDryReceived = (value) => {
-    setReceivedDD(value);
-  };
+  // const handleDogDryReceived = (value) => {
+  //   setReceivedDD(value);
+  // };
 
   return (
     <div className='pageinfo'>
@@ -36,6 +38,8 @@ function PageInfo() {
                 InputLabelProps={{
                     shrink: true,
                 }}
+                value={serialNumber}
+                onChange={(e) => setSerialNumber(e.target.value)}
             />
         </div>
         <div className='underserial'>
@@ -50,6 +54,8 @@ function PageInfo() {
                 InputLabelProps={{
                     shrink: true,
                 }}
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
             />
             {
                 (receivedLitter || receivedCD || receivedDD) && (
@@ -62,15 +68,18 @@ function PageInfo() {
                         margin='normal'
                         sx={{ width: '12ch', marginLeft:2 }}
                         InputLabelProps={{
-                            shrink: true
+                            shrink: true,
                         }}
+                        value={pounds}
+                        onChange={(e) => setPounds(e.target.value)}
                     />
                 )
             }
             
         </div>
       </div>
-      <ItemDetails receiveLitter={handleLitterReceived} receiveDogFoodDry={handleCatDryReceived} receiveCatFoodDry={handleDogDryReceived} />
+      <ItemDetails
+      receiveLitter={rcl} receiveDogFoodDry={rdfd} receiveCatFoodDry={rcfd} />
     </div>
   )
 }
