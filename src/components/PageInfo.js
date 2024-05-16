@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ItemDetails from './ItemDetails';
 import { TextField } from '@mui/material';
 import '../styles/PageInfo.css';
 
-function PageInfo() {
+function PageInfo({changeSerial, changeQuantity, changePounds, changeAnimal, changeWet, changeDry, changePate, changeNonPate}) {
 
   const [receivedLitter, setReceivedLitter] = useState(false);
 
@@ -36,6 +36,9 @@ function PageInfo() {
                 InputLabelProps={{
                     shrink: true,
                 }}
+                onChange={(e) => {
+                  changeSerial(parseInt(e.target.value));
+                }}
             />
         </div>
         <div className='underserial'>
@@ -49,6 +52,9 @@ function PageInfo() {
                 margin='normal'
                 InputLabelProps={{
                     shrink: true,
+                }}
+                onChange={(e) => {
+                  changeQuantity(parseInt(e.target.value));
                 }}
             />
             {
@@ -64,13 +70,17 @@ function PageInfo() {
                         InputLabelProps={{
                             shrink: true
                         }}
+                        onChange={(e) => {
+                          changePounds(parseInt(e.target.value));
+                        }}
                     />
                 )
             }
             
         </div>
       </div>
-      <ItemDetails receiveLitter={handleLitterReceived} receiveDogFoodDry={handleCatDryReceived} receiveCatFoodDry={handleDogDryReceived} />
+      <ItemDetails receiveLitter={handleLitterReceived} receiveDogFoodDry={handleCatDryReceived} receiveCatFoodDry={handleDogDryReceived} 
+      changeAnimal={changeAnimal} changeWet={changeWet} changeDry={changeDry} changePate={changePate} changeNonPate={changeNonPate}/>
     </div>
   )
 }

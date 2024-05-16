@@ -3,7 +3,8 @@ import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import '../styles/ItemDetails.css';
 
-function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry }) {
+function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry, 
+  changeAnimal, changeWet, changeDry, changePate, changeNonPate}) {
   
   // Cat
   const [catSelected, setCatSelected] = useState(false);
@@ -34,8 +35,9 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry }) {
   const handleLitterSelected = (event) => {
     setLitterSelected(event.target.checked);
     setCatFoodDisabled(event.target.checked);
+    receiveLitter(litterSelected);
   }
-  receiveLitter(litterSelected);
+  
   const [catFoodDisabled, setCatFoodDisabled] = useState(false);
 
   // Dog Food
@@ -67,8 +69,16 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry }) {
   const handleCatDryS = (event) => {
     setCatDryS(event.target.checked);
     setCatWetD(event.target.checked);
+    receiveCatFoodDry(catDryS);
+
+    //Change main field states
+    changeAnimal("cat");
+    changeWet(0);
+    changeDry(1);
+    changePate(0);
+    changeNonPate(0);    
   }
-  receiveCatFoodDry(catDryS);
+  
   const [catWetD, setCatWetD] = useState(false);
 
   // Dog Food Wet
@@ -76,6 +86,13 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry }) {
   const handleDogWetS = (event) => {
     setDogWetS(event.target.checked);
     setDogDryD(event.target.checked);
+
+    //Change main field states
+    changeAnimal("dog");
+    changeWet(1);
+    changeDry(0);
+    changePate(0);
+    changeNonPate(0);
   }
   const [dogDryD, setDogDryD] = useState(false);
 
@@ -84,8 +101,15 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry }) {
   const handleDogDryS = (event) => {
     setDogDryS(event.target.checked);
     setDogWetD(event.target.checked);
+    receiveDogFoodDry(dogDryS);
+
+    //Change main field states
+    changeAnimal("dog");
+    changeWet(0);
+    changeDry(1);
+    changePate(0);
+    changeNonPate(0);
   }
-  receiveDogFoodDry(dogDryS);
   const [dogWetD, setDogWetD] = useState(false);
 
   // Cat Food Wet Pate
@@ -93,6 +117,13 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry }) {
   const handlePateS = (event) => {
     setPateS(event.target.checked);
     setNonPateD(event.target.checked);
+
+    //Change main field states
+    changeAnimal("cat");
+    changeWet(0);
+    changeDry(0);
+    changePate(1);
+    changeNonPate(0);
   }
   const [nonPateD, setNonPateD] = useState(false);
 
@@ -101,8 +132,16 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry }) {
   const handleNonPateS = (event) => {
     setNonPateS(event.target.checked);
     setPateD(event.target.checked);
+
+    //Change main field states
+    changeAnimal("cat");
+    changeWet(0);
+    changeDry(0);
+    changePate(0);
+    changeNonPate(1);
   }
   const [pateD, setPateD] = useState(false);
+  
 
   return (
     <div className='itemdetails'>
