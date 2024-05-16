@@ -49,9 +49,9 @@ function AddItem() {
           "Content-type": "application/json; charset=UTF-8"
         }
   });
+  const body = await res.json();
   console.log(res.status);
-  console.log(res.body)
-
+  console.log(body);
   }
   
 
