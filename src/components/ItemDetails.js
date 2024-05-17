@@ -4,7 +4,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import '../styles/ItemDetails.css';
 
 function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry, 
-  changeAnimal, changeWet, changeDry, changePate, changeNonPate}) {
+  changeAnimal, changeWet, changeDry, changePate, changeNonPate, changeFood, changeHygiene}) {
   
   // Cat
   const [catSelected, setCatSelected] = useState(false);
@@ -36,6 +36,14 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry,
     setLitterSelected(event.target.checked);
     setCatFoodDisabled(event.target.checked);
     receiveLitter(litterSelected);
+    //Change main field states
+    changeAnimal("cat");
+    changeWet(0);
+    changeDry(0);
+    changePate(0);
+    changeNonPate(0);    
+    changeFood(0);
+    changeHygiene(1);
   }
   
   const [catFoodDisabled, setCatFoodDisabled] = useState(false);
@@ -53,6 +61,14 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry,
   const handlePeepadsSelected = (event) => {
     setPeepadsSelected(event.target.checked);
     setDogFoodDisabled(event.target.checked);
+    //Change main field states
+    changeAnimal("dog");
+    changeWet(0);
+    changeDry(0);
+    changePate(0);
+    changeNonPate(0);    
+    changeFood(0);
+    changeHygiene(1);
   }
   const [dogFoodDisabled, setDogFoodDisabled] = useState(false);
 
@@ -77,6 +93,8 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry,
     changeDry(1);
     changePate(0);
     changeNonPate(0);    
+    changeFood(1);
+    changeHygiene(0);
   }
   
   const [catWetD, setCatWetD] = useState(false);
@@ -93,6 +111,8 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry,
     changeDry(0);
     changePate(0);
     changeNonPate(0);
+    changeFood(1);
+    changeHygiene(0);
   }
   const [dogDryD, setDogDryD] = useState(false);
 
@@ -109,6 +129,8 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry,
     changeDry(1);
     changePate(0);
     changeNonPate(0);
+    changeFood(1);
+    changeHygiene(0);
   }
   const [dogWetD, setDogWetD] = useState(false);
 
@@ -124,6 +146,8 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry,
     changeDry(0);
     changePate(1);
     changeNonPate(0);
+    changeFood(1);
+    changeHygiene(0);
   }
   const [nonPateD, setNonPateD] = useState(false);
 
@@ -139,10 +163,11 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry,
     changeDry(0);
     changePate(0);
     changeNonPate(1);
+    changeFood(1);
+    changeHygiene(0);
   }
   const [pateD, setPateD] = useState(false);
   
-
   return (
     <div className='itemdetails'>
       <div className='animal'>

@@ -3,7 +3,8 @@ import ItemDetails from './ItemDetails';
 import { TextField } from '@mui/material';
 import '../styles/PageInfo.css';
 
-function PageInfo({changeSerial, changeQuantity, changePounds, changeAnimal, changeWet, changeDry, changePate, changeNonPate}) {
+function PageInfo({changeSerial, changeQuantity, changePounds, changeAnimal, changeWet, changeDry, changePate, changeNonPate, 
+  changeFood, changeHygiene}) {
 
   const [receivedLitter, setReceivedLitter] = useState(false);
 
@@ -80,7 +81,9 @@ function PageInfo({changeSerial, changeQuantity, changePounds, changeAnimal, cha
         </div>
       </div>
       <ItemDetails receiveLitter={handleLitterReceived} receiveDogFoodDry={handleCatDryReceived} receiveCatFoodDry={handleDogDryReceived} 
-      changeAnimal={changeAnimal} changeWet={changeWet} changeDry={changeDry} changePate={changePate} changeNonPate={changeNonPate}/>
+      changeAnimal={changeAnimal} changeWet={changeWet} changeDry={changeDry} changePate={changePate} changeNonPate={changeNonPate}
+      changeFood={changeFood} changeHygiene={changeHygiene}
+      />
     </div>
   )
 }

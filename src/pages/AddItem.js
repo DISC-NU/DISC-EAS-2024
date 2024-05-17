@@ -17,6 +17,8 @@ function AddItem() {
   const [pate, setPate] = useState(0);
   const [nonpate, setNonPate] = useState(0);
   const [quantity, setQuantity] = useState(0);
+  const [food, setFood] = useState(0);
+  const [hygiene, setHygiene] = useState(0); 
 
   async function make_api_call() {
 
@@ -26,8 +28,6 @@ function AddItem() {
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
     let currentDate = `${month}-${day}-${year}`;
-  
-    console.log(serialno, quantity, pounds, animal, wet, dry, pate, nonpate, currentDate);
 
     const data = {
       "serial": serialno,
@@ -38,8 +38,11 @@ function AddItem() {
       "pate": pate,
       "nonpate": nonpate,
       "quantity": quantity,
-      "transdate": currentDate
+      "transdate": currentDate,
+      "food": food,
+      "hygiene":hygiene,
     };
+    console.log(data);
   
     const api = "https://yzi5m26nwj.execute-api.us-west-2.amazonaws.com/beta/add-item-and-transaction"  
     const res = await fetch(api, {
@@ -71,7 +74,8 @@ function AddItem() {
     <div className='additem'>
       <h1 className='additemtitle'>ADD ITEM</h1>
       <PageInfo className='pageinfo' changeSerial={setSerialNo} changeQuantity={setQuantity} changePounds={setPounds}
-        changeAnimal={setAnimal} changeWet={setWet} changeDry={setDry} changePate={setPate} changeNonPate={setNonPate}/>
+        changeAnimal={setAnimal} changeWet={setWet} changeDry={setDry} changePate={setPate} changeNonPate={setNonPate}
+        changeFood={setFood} changeHygiene={setHygiene}/>
       <div>
         <button className='addbutton' onClick={handleBtnClick} disabled={btnDisable}>{buttonText}</button>
       </div>
