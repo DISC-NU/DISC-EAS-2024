@@ -37,7 +37,7 @@ function Checkout()  {
       "dry": dry,
       "pate": pate,
       "nonpate": nonpate,
-      "quantity": quantity,
+      "quantity": -quantity,
       "transdate": currentDate,
       "food": food,
       "hygiene":hygiene,
