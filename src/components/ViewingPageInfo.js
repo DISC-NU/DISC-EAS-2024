@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import ItemDetails from './ItemDetails';
 import { TextField } from '@mui/material';
 import '../styles/PageInfo.css';
-function ViewingPageInfo() {
+function ViewingPageInfo({changeSerial, changeAnimal, changeWet, changeDry, changePate, changeNonPate, 
+    changeFood, changeHygiene}) {
     const [receivedLitter, setReceivedLitter] = useState(false);
 
     const handleLitterReceived = (value) => {
@@ -24,7 +25,9 @@ function ViewingPageInfo() {
     return (
         <div className= 'pageinfo'>
             <div>
-            <ItemDetails receiveLitter={handleLitterReceived} receiveDogFoodDry={handleCatDryReceived} receiveCatFoodDry={handleDogDryReceived}/>
+            <ItemDetails receiveLitter={handleLitterReceived} receiveDogFoodDry={handleCatDryReceived} receiveCatFoodDry={handleDogDryReceived} 
+            changeAnimal={changeAnimal} changeWet={changeWet} changeDry={changeDry} changePate={changePate} changeNonPate={changeNonPate}
+            changeFood={changeFood} changeHygiene={changeHygiene}/>
             <div className='leftside'>
                 <div className='serial'>
                     <TextField
@@ -35,6 +38,9 @@ function ViewingPageInfo() {
                       margin= 'normal'
                       InputLabelProps={{
                         shrink: true,
+                      }}
+                      onChange={(e) => {
+                        changeSerial(parseInt(e.target.value));
                       }}
                     />
                 </div>
