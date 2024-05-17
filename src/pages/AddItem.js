@@ -44,17 +44,25 @@ function AddItem() {
     };
     console.log(data);
   
-    const api = "https://yzi5m26nwj.execute-api.us-west-2.amazonaws.com/beta/add-item-and-transaction"  
-    const res = await fetch(api, {
-      method:"POST",
-      body: JSON.stringify(data),
-      headers: {
-          "Content-type": "application/json; charset=UTF-8"
+    const api = "https://yzi5m26nwj.execute-api.us-west-2.amazonaws.com/beta/add-item-and-transaction"; 
+    try{
+        const res = await fetch(api, {
+            method:"POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+              }
+          });
+        if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
         }
-  });
-  const body = await res.json();
-  console.log(res.status);
-  console.log(body);
+        const responseData = await res.json();
+        console.log(responseData);
+    }
+    catch (error){
+        console.error('Error:', error.message);
+    }
+
   }
   
 
