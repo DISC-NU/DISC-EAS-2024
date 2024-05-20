@@ -16,6 +16,14 @@
     text-shadow: 0 2.5px 2px gray;
 }
 
+.checkout .warning {
+    text-align: start;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 16px;
+    color: red;
+}
+
 .checkout .checkoutbutton {
     margin: 10px;
     width: 200px;

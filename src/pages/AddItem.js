@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PageInfo from '../components/PageInfo';
 import Footer from '../components/Footer';
 import '../styles/AddItem.css';
-import HelpModal from '../components/HelpButton';
-
-
 
 function AddItem() {
 
@@ -19,6 +16,44 @@ function AddItem() {
   const [quantity, setQuantity] = useState(0);
   const [food, setFood] = useState(0);
   const [hygiene, setHygiene] = useState(0); 
+
+  useEffect(() => {
+    const data = {};
+    data['serialno'] = serialno;
+    
+    make_api_get_call(data);
+  }, [serialno])
+
+  const [exists, setExists] = useState(0);
+
+  async function make_api_get_call(data){
+    const api = 'https://yzi5m26nwj.execute-api.us-west-2.amazonaws.com/beta/lookup';
+
+    const queryString = Object.entries(data)
+        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+        .join('&');
+
+    const url = `${api}?${queryString}`;
+
+    console.log(url)
+    let res = await fetch(url, {
+        method:"GET"
+    });
+    console.log(res.status);
+    res = await res.json();
+    const body = res.body;
+    console.log(body);
+
+    if (body) {
+      if (Object.keys(body).length > 0) {
+        setExists(1);
+      } else {
+        setExists(0);
+      }
+    } else {
+      setExists(0);
+    }
+  }
 
   async function make_api_call() {
 
@@ -64,7 +99,6 @@ function AddItem() {
     }
 
   }
-  
 
   const handleClick = () => {
     window.location.reload();
@@ -72,16 +106,33 @@ function AddItem() {
 
   const [buttonText, setButtonText] = useState('ADD');
   const [btnDisable, setBtnDisable] = useState(false);
+
+  const [warning, setWarning] = useState(false);
+
   function handleBtnClick() {
-    setButtonText('ADDED');
-    setBtnDisable(true);
-    make_api_call();
+    console.log(wet);
+    if (!serialno || !quantity){
+      setWarning(true);
+    } else if ((dry && !pounds) || (animal === 'cat' && hygiene && !pounds)) {
+      setWarning(true);
+    } else if (!animal ||
+               (animal === 'cat' && !food && !hygiene) ||
+               (animal === 'dog' && !food && !hygiene) ||
+               (animal && food && !wet && !dry) ||
+               (animal === 'cat' && food && wet && !pate && !nonpate)) {
+      setWarning(true);
+    } else {
+      setWarning(false);
+      setButtonText('ADDED');
+      setBtnDisable(true);
+      make_api_call();
+    }
   }
 
   return (
     <div className='additem'>
       <h1 className='additemtitle'>ADD ITEM</h1>
-      <PageInfo className='pageinfo' changeSerial={setSerialNo} changeQuantity={setQuantity} changePounds={setPounds}
+      <PageInfo className='pageinfo' exists={exists} changeSerial={setSerialNo} changeQuantity={setQuantity} changePounds={setPounds}
         changeAnimal={setAnimal} changeWet={setWet} changeDry={setDry} changePate={setPate} changeNonPate={setNonPate}
         changeFood={setFood} changeHygiene={setHygiene}/>
       <div>
@@ -90,9 +141,9 @@ function AddItem() {
       <div>
         <button type="button" onClick={handleClick} className='addanotheritembutton'>ADD ANOTHER ITEM</button>
       </div>
-      <div className='help-button-placement'>
-        <HelpModal />
-      </div>
+      {warning && (
+                <p className='warning'>Please fill in all available fields.</p>
+            )}
       <Footer />
     </div>
   )
