@@ -115,7 +115,7 @@ function AddItem() {
       setWarning(true);
     } else if ((dry && !pounds) || (animal === 'cat' && hygiene && !pounds)) {
       setWarning(true);
-    } else if (!animal ||
+    } else if ((!exists && !animal) ||
                (animal === 'cat' && !food && !hygiene) ||
                (animal === 'dog' && !food && !hygiene) ||
                (animal && food && !wet && !dry) ||
