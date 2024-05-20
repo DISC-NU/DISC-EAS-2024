@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import ItemDetails from './ItemDetails';
 import { TextField } from '@mui/material';
 import '../styles/PageInfo.css';
 
-function PageInfo({changeSerial, changeQuantity, changePounds, changeAnimal, changeWet, changeDry, changePate, changeNonPate, 
+function PageInfo({exists, changeSerial, changeQuantity, changePounds, changeAnimal, changeWet, changeDry, changePate, changeNonPate, 
   changeFood, changeHygiene}) {
 
   const [receivedLitter, setReceivedLitter] = useState(false);
@@ -80,10 +80,19 @@ function PageInfo({changeSerial, changeQuantity, changePounds, changeAnimal, cha
             
         </div>
       </div>
-      <ItemDetails receiveLitter={handleLitterReceived} receiveDogFoodDry={handleCatDryReceived} receiveCatFoodDry={handleDogDryReceived} 
+      { exists === 1 && (
+        <p className='item'>Item exists in inventory! <br/> Input quantity.</p>
+      )}
+      { exists === 2 && (
+        <p className='item'>Scan item and input quantity to checkout.</p>
+      )}
+      { exists === 0 && (
+        <ItemDetails receiveLitter={handleLitterReceived} receiveDogFoodDry={handleCatDryReceived} receiveCatFoodDry={handleDogDryReceived} 
       changeAnimal={changeAnimal} changeWet={changeWet} changeDry={changeDry} changePate={changePate} changeNonPate={changeNonPate}
       changeFood={changeFood} changeHygiene={changeHygiene}
       />
+      )}
+      
     </div>
   )
 }

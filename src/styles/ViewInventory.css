@@ -2,7 +2,7 @@
     width: 100%;
     height: 100%;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     display: flex;
     flex-direction: column;
     padding-top: 40px;
@@ -16,11 +16,103 @@
     text-shadow: 0 2.5px 2px gray;
 }
 
+.viewinventory h2 {
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 24px;
+    color: #548D90;
+    text-shadow: 0 1.5px 2px gray;
+}
+
+.viewinventory .body {
+    justify-content: space-between;
+    /* margin-bottom: 120px; */
+    display: flex;
+    flex-direction: row;
+    min-width: 1100px;
+}
+
+.viewinventory .leftside {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.viewinventory .h2andclear {
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+.viewinventory .page-info {
+    padding-left: 80px;
+}
+
+.viewinventory .item-table-placement {
+    position: relative;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.viewinventory .totalcontainer {
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+    width: 1100px;
+    margin-bottom: 100px;
+}
+
+.viewinventory .totaltext {
+    text-align: center;
+    width: 150px;
+    border: 2px solid #548D90;
+    background-color: #75A4A6;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 18px;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.viewinventory .total {
+    text-align: center;
+    width: 100px;
+    border: 2px solid #548D90;
+    border-left: 0px;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.viewinventory .poundstext {
+    text-align: center;
+    width: 140px;
+    border: 2px solid #548D90;
+    background-color: #75A4A6;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 18px;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+}
+
 .viewinventory .clearbutton {
     margin: 10px;
-    width: 100px;
-    height: 50px;
-    border-radius: 18px;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
     color: white;
     background-color: #75A4A6;
     border: 3px solid #548D90;
@@ -66,80 +158,4 @@
 .viewinventory .searchbutton:disabled {
     background-color: #d4d4dd;
     border: 3px solid #b3b2c2;
-}
-
-.viewinventory .item-details-container {
-    position: absolute;
-    bottom: 20%;
-    left: 10%;
-    display: flex;
-}
-
-.viewinventory .clear-button-placement {
-    position: absolute;
-    bottom: 58%;
-    left: 33%;
-    transform: translateX(-50%);
-}
-
-.viewinventory .item-table-placement {
-    position: absolute;
-    left: 70%;
-    transform: translateX(-50%);
-    max-height: 50%;
-    overflow-y: scroll;
-}
-
-.viewinventory .page-info {
-    position: absolute;
-    bottom: 25%;
-    left: 23%;
-    transform: translateX(-50%);
-}
-
-.viewinventory .search-button-placement {
-    position: absolute;
-    bottom: 6%;
-    left: 19%;
-    transform: translateX(-50%);
-}
-
-.viewinventory .help-button-placement {
-    position: absolute;
-    bottom: 75%;
-    left: 10%;
-    transform: translateX(-50%);
-    margin: 10px;
-    width: 70px;
-    height: 40px;
-    border-radius: 18px;
-    color: white;
-    background-color: #75A4A6;
-    border: 3px solid #548D90;
-    font-family: 'Karla';
-    font-weight: 400;
-    text-align: center;
-    display: inline-block;
-    font-size: 30px;
-    box-shadow: 0 3px 4px gray
-}
-
-.viewinventory .help-button {
-    margin: 10px;
-    width: 240px;
-    height: 120px;
-    border-radius: 18px;
-    color: white;
-    background-color: #75A4A6;
-    border: 3px solid #548D90;
-    font-family: 'Karla';
-    font-weight: 400;
-    text-align: center;
-    display: inline-block;
-    font-size: 30px;
-    box-shadow: 0 3px 4px gray
-}
-
-.inventory-header {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }

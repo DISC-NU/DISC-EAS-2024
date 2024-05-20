@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import PageInfo from '../components/PageInfo';
 import Footer from '../components/Footer';
 import '../styles/Checkout.css';
-import HelpModal from '../components/HelpButton';
 
 function Checkout()  {
 
@@ -65,23 +64,31 @@ function Checkout()  {
     }
     
 }
+
+    const [warning, setWarning] = useState(false);
     
     const handleClick = () => {
         window.location.reload();
-      };
+    };
     
-      const [buttonText, setButtonText] = useState('CHECK OUT');
-      const [btnDisable, setBtnDisable] = useState(false);
-      function handleBtnClick() {
-        setButtonText('CHECKED OUT');
-        setBtnDisable(true);
-        make_api_call();
+    const [buttonText, setButtonText] = useState('CHECK OUT');
+    const [btnDisable, setBtnDisable] = useState(false);
+
+    function handleBtnClick() {
+        if (!serialno || !quantity){
+            setWarning(true);
+        } else {
+            setWarning(false);
+            setButtonText('CHECKED OUT');
+            setBtnDisable(true);
+            make_api_call();
+        }
     }
     
     return (
         <div className='checkout'>
             <h1 className='checkouttitle'>CHECK OUT</h1>
-            <PageInfo className='pageinfo' changeSerial={setSerialNo} changeQuantity={setQuantity} changePounds={setPounds}
+            <PageInfo exists={2} className='pageinfo' changeSerial={setSerialNo} changeQuantity={setQuantity} changePounds={setPounds}
                 changeAnimal={setAnimal} changeWet={setWet} changeDry={setDry} changePate={setPate} changeNonPate={setNonPate}
                 changeFood={setFood} changeHygiene={setHygiene}/>
             <div>
@@ -90,9 +97,9 @@ function Checkout()  {
             <div>
                 <button type="button" onClick={handleClick} className='checkoutanotheritembutton'>CHECK OUT ANOTHER ITEM</button>
             </div>
-            <div className='help-button-placement'>
-                <HelpModal />
-            </div>
+            {warning && (
+                <p className='warning'>Please fill in all available fields.</p>
+            )}
             <Footer />
         </div>
     )

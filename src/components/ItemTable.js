@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/ItemTable.css';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -31,7 +31,7 @@ function ItemTable({inventory}) {
                             <TableCell align='right'>{ item["category"] }</TableCell>
                             <TableCell align='right'>{ item["quantity"] }</TableCell>
                             <TableCell align='right'>{ item["pounds"] }</TableCell>
-                            <TableCell align='right'>{ item["quantity"] * item["pounds"] }</TableCell>
+                            <TableCell align='right'>{ item["pounds"] == null ? null : item["quantity"] * item["pounds"] }</TableCell>
                         </TableRow>
                         ))}
                     </TableBody>

@@ -114,6 +114,20 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry,
   const handleCatWetS = (event) => {
     setCatWetS(event.target.checked);
     setCatDryD(event.target.checked);
+
+    //Change main field states
+    changeAnimal("cat");
+    changeWet(1);
+    changeDry(0);
+    changePate(0);
+    changeNonPate(0);    
+    changeFood(1);
+    changeHygiene(0);
+
+    //Remove Dry state if unchecked
+    if(!event.target.checked){
+      changeWet(0);
+    }
   }
   const [catDryD, setCatDryD] = useState(false);
 
@@ -191,7 +205,7 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry,
 
     //Change main field states
     changeAnimal("cat");
-    changeWet(0);
+    changeWet(1);
     changeDry(0);
     changePate(1);
     changeNonPate(0);
@@ -212,7 +226,7 @@ function ItemDetails( { receiveLitter, receiveDogFoodDry, receiveCatFoodDry,
 
     //Change main field states
     changeAnimal("cat");
-    changeWet(0);
+    changeWet(1);
     changeDry(0);
     changePate(0);
     changeNonPate(1);

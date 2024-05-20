@@ -12,6 +12,17 @@
     width: 250px;
 }
 
+.pageinfo .item {
+    text-align: start;
+    width: 250px;
+    height: 144px;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 18px;
+    color: darkgreen;
+}
+
+
 .pageinfo .leftside .underserial {
     justify-content: space-between;
     align-items: center;
