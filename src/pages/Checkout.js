@@ -10,6 +10,7 @@ function Checkout()  {
     //Initialize states of form input
     const [serialno, setSerialNo] = useState(0);
     const [animal, setAnimal] = useState("");
+    const [description, setDescription] = useState("");
     const [pounds, setPounds] = useState(0);
     const [wet, setWet] = useState(0);
     const [dry, setDry] = useState(0);
@@ -40,6 +41,7 @@ function Checkout()  {
       "transdate": currentDate,
       "food": food,
       "hygiene":hygiene,
+      "description":description
     };
     console.log(data);
   

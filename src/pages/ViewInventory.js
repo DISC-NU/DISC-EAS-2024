@@ -36,8 +36,10 @@ function ViewInventory() {
 
       if (body[x]['category'] === 'PeePads' || body[x]['category'] === 'Wet Food' || body[x]['category'] === 'Pate Food' || body[x]['category'] === 'Nonpate Food') {
         body[x]['pounds'] = null;
+        setPounds(false);
       } else {
         poundsTotal += body[x]['pounds'] * body[x]['quantity'];
+        setPounds(true);
       }
     }
     setTotal(total);

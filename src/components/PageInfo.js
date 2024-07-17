@@ -4,7 +4,7 @@ import { TextField } from '@mui/material';
 import '../styles/PageInfo.css';
 
 function PageInfo({exists, changeSerial, changeQuantity, changePounds, changeAnimal, changeWet, changeDry, changePate, changeNonPate, 
-  changeFood, changeHygiene}) {
+  changeFood, changeHygiene, changeDesc}) {
 
   const [receivedLitter, setReceivedLitter] = useState(false);
 
@@ -42,6 +42,23 @@ function PageInfo({exists, changeSerial, changeQuantity, changePounds, changeAni
                 }}
             />
         </div>
+        {exists === 0 && (<div className='desc'>
+            <TextField
+                required
+                fullWidth
+                id="outlined-required"
+                label="Item Description"
+                margin='normal'
+                InputLabelProps={{
+                    shrink: true,
+                }}
+                onChange={(e) => {
+                  changeDesc(e.target.value);
+                }}
+                multiline
+                rows={3}
+            />
+        </div>)}
         <div className='underserial'>
             <TextField
                 required

@@ -16,22 +16,24 @@ function ItemTable({inventory}) {
                     <TableHead>
                         <TableRow className='inventory-header'>
                             <TableCell> S## </TableCell>
-                            <TableCell align='right'> Animal </TableCell>
-                            <TableCell align='right'> Category </TableCell>
-                            <TableCell align='right'> Quantity in Stock </TableCell>
-                            <TableCell align='right'> Pounds per Item </TableCell>
-                            <TableCell align='right'> Total Amount (Pounds) </TableCell>
+                            <TableCell align='left'> Animal </TableCell>
+                            <TableCell align='left'> Category </TableCell>
+                            <TableCell align='left'> Description </TableCell>
+                            <TableCell align='left'> Quantity in Stock </TableCell>
+                            <TableCell align='left'> Pounds per Item </TableCell>
+                            <TableCell align='left'> Total Amount (Pounds) </TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {inventory.map( (item) => (
                         <TableRow>
                             <TableCell>{ item["serial_num"] }</TableCell>
-                            <TableCell align='right'>{ item["animal"].charAt(0).toUpperCase() + item["animal"].substr(1).toLowerCase() }</TableCell>
-                            <TableCell align='right'>{ item["category"] }</TableCell>
-                            <TableCell align='right'>{ item["quantity"] }</TableCell>
-                            <TableCell align='right'>{ item["pounds"] }</TableCell>
-                            <TableCell align='right'>{ item["pounds"] == null ? null : item["quantity"] * item["pounds"] }</TableCell>
+                            <TableCell align='left'>{ item["animal"].charAt(0).toUpperCase() + item["animal"].substr(1).toLowerCase() }</TableCell>
+                            <TableCell align='left'>{ item["category"] }</TableCell>
+                            <TableCell align='left' sx={{ whiteSpace: 'normal', wordWrap: 'break-word', width:'30%' }}>{ item["description"] }</TableCell>
+                            <TableCell align='left'>{ item["quantity"] }</TableCell>
+                            <TableCell align='left'>{ item["pounds"] }</TableCell>
+                            <TableCell align='left'>{ item["pounds"] == null ? null : item["quantity"] * item["pounds"] }</TableCell>
                         </TableRow>
                         ))}
                     </TableBody>

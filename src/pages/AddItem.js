@@ -7,6 +7,7 @@ function AddItem() {
 
   //Initialize states of form input
   const [serialno, setSerialNo] = useState(0);
+  const [description, setDescription] = useState("");
   const [animal, setAnimal] = useState("");
   const [pounds, setPounds] = useState(0);
   const [wet, setWet] = useState(0);
@@ -76,6 +77,7 @@ function AddItem() {
       "transdate": currentDate,
       "food": food,
       "hygiene":hygiene,
+      "description":description
     };
     console.log(data);
   
@@ -134,7 +136,7 @@ function AddItem() {
       <h1 className='additemtitle'>ADD ITEM</h1>
       <PageInfo className='pageinfo' exists={exists} changeSerial={setSerialNo} changeQuantity={setQuantity} changePounds={setPounds}
         changeAnimal={setAnimal} changeWet={setWet} changeDry={setDry} changePate={setPate} changeNonPate={setNonPate}
-        changeFood={setFood} changeHygiene={setHygiene}/>
+        changeFood={setFood} changeHygiene={setHygiene} changeDesc={setDescription}/>
       <div>
         <button className='addbutton' onClick={handleBtnClick} disabled={btnDisable}>{buttonText}</button>
       </div>
