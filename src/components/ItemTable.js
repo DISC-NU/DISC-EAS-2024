@@ -12,7 +12,7 @@ function ItemTable({inventory}) {
     return (
         <div>
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650}} aria-label='Inventory'>
+                <Table sx={{minWidth: 650}} aria-label='Inventory'>
                     <TableHead>
                         <TableRow className='inventory-header'>
                             <TableCell> S## </TableCell>

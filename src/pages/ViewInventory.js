@@ -31,12 +31,12 @@ function ViewInventory() {
 
     let total = 0;
     let poundsTotal = 0;
+    setPounds(false);
     for (let x in body) {
       total += body[x]['quantity'];
 
       if (body[x]['category'] === 'PeePads' || body[x]['category'] === 'Wet Food' || body[x]['category'] === 'Pate Food' || body[x]['category'] === 'Nonpate Food') {
         body[x]['pounds'] = null;
-        setPounds(false);
       } else {
         poundsTotal += body[x]['pounds'] * body[x]['quantity'];
         setPounds(true);
