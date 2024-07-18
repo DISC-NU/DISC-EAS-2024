@@ -56,7 +56,7 @@ function PageInfo({exists, changeSerial, changeQuantity, changePounds, changeAni
                   changeDesc(e.target.value);
                 }}
                 multiline
-                rows={3}
+                rows={1}
             />
         </div>)}
         <div className='underserial'>
